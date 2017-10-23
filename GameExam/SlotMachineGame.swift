@@ -22,38 +22,60 @@
 import UIKit
 import Foundation
 
-class SlotMachineGame: UIView {
+class SlotMachineGame{
 
-    var score: UInt32 = 100
+    var score: Int = 100
     var array: [Digit] = []
     
-    var digits: UInt32 = 0
+    var digits: Int = 0
     
     var lost = false
-    func setNumberOfDigits(number: UInt32) {
-        
-        self.digits = number
+    
+    init (_ numberOfDigits : Int ){
+        self.digits = numberOfDigits
         self.array = []
-        for _ in 0...number {
+        for _ in 0...numberOfDigits {
             array.append(Digit())
         }
     }
     
-    func spin(){
+    func reset() {
         
+        score = 100
+        lost = false
+    }
+    
+    func getScore() -> Int {
+        
+        return score
+    }
+    
+    func getDigits() -> [Digit] {
+        
+        return array
+    }
+    
+    func spinDigits() {
+        
+        self.array = []
+        for _ in 0...digits {
+            array.append(Digit())
+        }
+    }
+    func spin(){
         self.score = self.score - 2
-        setNumberOfDigits(number: self.digits)
+        spinDigits()
         if(digits == 3){
             if(array[0].color == array[1].color && array[1].color == array[2].color) {
                 if(array[0].digit == array[1].digit && array[1].digit == array[2].digit){
-                    score += 100
+                    score += 300
                 }
                 else{
-                    score += 25
+                    score += 75
                 }
             }
             else if(array[0].digit == array[1].digit && array[1].digit == array[2].digit){
-                score += 50
+                score += 150
             }
         }
         else if(digits == 5){
@@ -71,7 +93,7 @@ class SlotMachineGame: UIView {
             
         }
         
-        if score < 2 {
+        if score <= 2 {
             lost = true
         }
     }

@@ -13,21 +13,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        machine.setNumberOfDigits(number: 3)
-        machine2.setNumberOfDigits(number: 5)
-        //digit1.textColor = UIColor.red
-        //digit2.textColor = UIColor.red
-        //digit3.textColor = UIColor.red
-        //digit5_1.textColor = UIColor.red
-        //digit5_2.textColor = UIColor.red
-        //digit5_3.textColor = UIColor.red
-        //digit5_4.textColor = UIColor.red
-        //digit5_5.textColor = UIColor.red
+//        machine.setNumberOfDigits(number: 3)
+//        machine2.setNumberOfDigits(number: 5)
+//        digit1.textColor = UIColor.red
+//        digit2.textColor = UIColor.red
+//        digit3.textColor = UIColor.red
+//        digit5_1.textColor = UIColor.blue
+//        digit5_2.textColor = UIColor.blue
+//        digit5_3.textColor = UIColor.blue
+//        digit5_4.textColor = UIColor.blue
+//        digit5_5.textColor = UIColor.blue
         // Do any additional setup after loading the view, typically from a nib.
         
     }
     
-    private var machine = SlotMachineGame()
+    private var machine = SlotMachineGame(3)
     
     @IBOutlet weak var score: UILabel!
     
@@ -49,19 +49,11 @@ class ViewController: UIViewController {
         digit3.text = String(machine.array[2].digit)
     }
     @IBAction func reset(_ sender: UIButton) {
-        
-        machine = SlotMachineGame()
-        machine.setNumberOfDigits(number: 3)
-        digit1.textColor = UIColor.red
-        digit2.textColor = UIColor.red
-        digit3.textColor = UIColor.red
-        digit1.text = "0"
-        digit2.text = "0"
-        digit3.text = "0"
-        score.text = "Score: 100"
+        machine.reset()
+        score.text = "Score: " + String(machine.getScore())
     }
     
-    private var machine2 = SlotMachineGame()
+    private var machine2 = SlotMachineGame(5)
     
     @IBOutlet weak var digit5_1: UILabel!
     
@@ -93,8 +85,7 @@ class ViewController: UIViewController {
     
     @IBAction func reset5(_ sender: UIButton) {
         
-        machine2 = SlotMachineGame()
-        machine2.setNumberOfDigits(number: 5)
+        machine2 = SlotMachineGame(5)
         digit5_1.textColor = UIColor.red
         digit5_2.textColor = UIColor.red
         digit5_3.textColor = UIColor.red
