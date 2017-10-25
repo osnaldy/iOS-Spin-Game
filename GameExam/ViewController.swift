@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  GameExam
 //
-//  Created by Osnaldy Vasquez on 10/22/17.
+//  Created by Osnaldy Vasquez on 10/23/17.
 //  Copyright © 2017 Osnaldy Vasquez. All rights reserved.
 //
 
@@ -12,19 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        machine.setNumberOfDigits(number: 3)
-//        machine2.setNumberOfDigits(number: 5)
-//        digit1.textColor = UIColor.red
-//        digit2.textColor = UIColor.red
-//        digit3.textColor = UIColor.red
-//        digit5_1.textColor = UIColor.blue
-//        digit5_2.textColor = UIColor.blue
-//        digit5_3.textColor = UIColor.blue
-//        digit5_4.textColor = UIColor.blue
-//        digit5_5.textColor = UIColor.blue
-        // Do any additional setup after loading the view, typically from a nib.
-        
     }
     
     private var machine = SlotMachineGame(3)
@@ -82,21 +69,10 @@ class ViewController: UIViewController {
         digit5_5.text = String(machine2.array[4].digit)
     }
     
-    
     @IBAction func reset5(_ sender: UIButton) {
         
         machine2 = SlotMachineGame(5)
-        digit5_1.textColor = UIColor.red
-        digit5_2.textColor = UIColor.red
-        digit5_3.textColor = UIColor.red
-        digit5_4.textColor = UIColor.red
-        digit5_5.textColor = UIColor.red
-        digit5_1.text = "0"
-        digit5_2.text = "0"
-        digit5_3.text = "0"
-        digit5_4.text = "0"
-        digit5_5.text = "0"
-        score5.text = "Score: 100"
+        score5.text = "Score: " + String(machine2.getScore())
     }
 }
 

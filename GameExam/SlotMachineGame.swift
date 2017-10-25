@@ -2,22 +2,9 @@
 //  SlotMachineGame.swift
 //  GameExam
 //
-//  Created by Osnaldy Vasquez on 10/22/17.
+//  Created by Osnaldy Vasquez on 10/23/17.
 //  Copyright © 2017 Osnaldy Vasquez. All rights reserved.
 //
-
-/*
- You will need to have a SlotMachineGame class that manages the spinning and the score. The SlotMachineGame should:
- Manage the changing of the digits.
- Manage the score as follows:
- A new game starts with a score of 100.
- Each spin costs the player two points.
- All digits equal and colors equal (Ex. 5 5 5 or 2 2 2 2 2 ) the user earns 100 points in the 3-Digit game and 500 points in the 5-Digit game.
- All colors equal but digits differ (Ex. 3 5 7 or 1 4 9 3 5 ) the user earns 25 points in the 3-Digit game and 125 points in the 5-Digit game.
- All digits equal but colors differ ( 7 7 7 or 1 1 1 1 1 ) the user earns 50 points in the 3-Digit game and 250 points in the 5-Digit game.
- When the user has a score less than 2, the Spin button should be disabled.
- Keep a history of each spin and make it available to the History View during segue.
-*/
 
 import UIKit
 import Foundation

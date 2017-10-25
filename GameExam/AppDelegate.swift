@@ -2,10 +2,9 @@
 //  AppDelegate.swift
 //  GameExam
 //
-//  Created by Osnaldy Vasquez on 10/22/17.
+//  Created by Osnaldy Vasquez on 10/23/17.
 //  Copyright © 2017 Osnaldy Vasquez. All rights reserved.
 //
-
 import UIKit
 
 @UIApplicationMain
